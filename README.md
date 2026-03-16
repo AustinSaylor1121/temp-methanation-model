@@ -1,2 +1,2 @@
-# temp-methanation-model
-Temporary repository to hold the code for my CO2 methanation project until I can get access the one in the Kreitz Group GitHub organization.
+# methanation-model
+Microkinetic modeling of the CO2 methanation experiments in a profile reactor
