@@ -103,8 +103,12 @@ def profile_simulation(yaml_file):
     # print(sim.rtol)
     # print(sim.atol)
 
-    sim.rtol = 1.0e-11
-    sim.atol = 1.0e-17
+    # sim.rtol = 1.0e-11
+    # sim.atol = 1.0e-22
+
+    sim.max_time_step = 10
+
+    
 
     headers = ['Distance (mm)', 'T (C)', 'P (atm)'] + gas1.species_names + surf1.species_names
     output_data = []
@@ -122,11 +126,12 @@ def profile_simulation(yaml_file):
             sim.reinitialize()
             
             sim.advance_to_steady_state()
+            # sim.solve_steady()
         
         # write the gas mass fractions and surface coverages vs. distance
         output_data.append(
             [dist, r.T - 273.15, r.phase.P / ct.one_atm]
-            + list(r.phase.Y)  
+            + list(r.phase.X)  
             + list(rsurf.phase.coverages)  
         )
 

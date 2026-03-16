@@ -35,7 +35,12 @@ for mechanism_number in mechanism_numbers:
 
     df = pd.DataFrame(data=data, columns= headers)
 
-    plotting_methods.plot_CO2_profiles(df,mechanism_number)
+    plotting_methods.plot_CO2_profiles(df,mechanism_number, 1)
+    plotting_methods.plot_H2_profiles(df, mechanism_number, 2)
+    plotting_methods.plot_Ar_profiles(df, mechanism_number, 3)
+    plotting_methods.plot_H2O_profiles(df, mechanism_number, 4)
+    plotting_methods.plot_CH4_profiles(df, mechanism_number, 5)
+    plotting_methods.plot_CO_profiles(df, mechanism_number, 6)
 
     progress = progress + 1
     print(f"Percent Complete: {progress / len(mechanism_numbers) * 100:.2f}%", end="\r")
