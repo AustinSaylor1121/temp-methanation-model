@@ -1,27 +1,17 @@
 generator: cti2yaml
 cantera-version: 2.6.0a3
 date: Thu, 24 Mar 2022 22:05:20 +0100
-input-files: [chem.cti]
 
 units: {length: cm, quantity: mol, activation-energy: kcal/mol}
 
 elements:
-- symbol: Ci
-  atomic-weight: 13.003
-- symbol: D
-  atomic-weight: 2.014
-- symbol: Oi
-  atomic-weight: 18.0
-- symbol: T
-  atomic-weight: 3.016
 - symbol: X
   atomic-weight: 195.083
 
 phases:
 - name: gas
   thermo: ideal-gas
-  elements: [H, D, T, C, Ci, O, Oi, N, Ne, Ar, He, Si, S, F, Cl, Br, I,
-    X]
+  elements: [H, C, O, N, Ne, Ar, He, S, F, Cl, Br, I, X]
   species: [Ar, He, Ne, N2, CH4(1), CO2(2), H2O(3), H2(4), CO(5), C2H6(6)]
   transport: mixture-averaged
   state:
@@ -30,8 +20,7 @@ phases:
 - name: surface1
   thermo: coverage-dependent-surface
   adjacent-phases: [gas]
-  elements: [H, D, T, C, Ci, O, Oi, N, Ne, Ar, He, Si, S, F, Cl, Br, I,
-    X]
+  elements: [H, C, O, N, Ne, Ar, He, S, F, Cl, Br, I, X]
   species: [site(7), HX(8), CO2X(9), OX(10), OCX(11), HOX(12), H2OX(13),
     CX(14), CHX(15), CH2X(16), CH3X(17), CH4X(18), HOCXO(19), CXHO(20),
     HCOOX(21), CXOH(22), HCXOH(23), H2CXOH(24), C2H6X(25), C2H5X(26), CHCH3X(27),
