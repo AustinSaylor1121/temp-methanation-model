@@ -125,7 +125,7 @@ def profile_simulation(yaml_file):
             upstream.phase.TDY = r.phase.TDY
             sim.reinitialize()
             
-            sim.advance_to_steady_state()
+            sim.advance_to_steady_state(max_steps=2e4)
             # sim.solve_steady()
         
         # write the gas mass fractions and surface coverages vs. distance

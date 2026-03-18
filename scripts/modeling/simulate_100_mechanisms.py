@@ -8,8 +8,10 @@ import matplotlib.pyplot as plt
 
 
 
-#get a random list of 100 mechanims to try
+#get a random list of 100 mechanims to try, use a specific seed to make it reproducible
+random.seed(33)
 mechanism_numbers = random.sample(range(0,5000),100)
+print(mechanism_numbers)
 
 progress = 0
 error_number = 0
@@ -49,6 +51,54 @@ print()
 print('Percent Complete: 100%')
 
 print(f'error rate of {error_number / len(mechanism_numbers)}')
+
+#add the experimental results for the CO2 profile
+
+df = pd.read_csv('data/CO2.csv', names=['X', 'Y'])
+plt.figure(1)
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.legend()
+plt.savefig('results/Gas_Profile_CO2.png')
+
+#add the experimental results for the H2 profile
+
+df = pd.read_csv('data/H2.csv', names=['X', 'Y'])
+plt.figure(2)
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.legend()
+plt.savefig('results/Gas_Profile_H2.png')
+
+#add the experimental results for the Ar profile
+
+df = pd.read_csv('data/Ar.csv', names=['X', 'Y'])
+plt.figure(3)
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.legend()
+plt.savefig('results/Gas_Profile_Ar.png')
+
+#add the experimental results for the H20 profile
+
+df = pd.read_csv('data/H20.csv', names=['X', 'Y'])
+plt.figure(4)
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.legend()
+plt.savefig('results/Gas_Profile_H2O.png')
+
+#add the experimental results for the CH4 profile
+
+df = pd.read_csv('data/CH4.csv', names=['X', 'Y'])
+plt.figure(5)
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.legend()
+plt.savefig('results/Gas_Profile_CH4.png')
+
+#add the experimental results for the CO profile
+
+df = pd.read_csv('data/CO.csv', names=['X', 'Y'])
+plt.figure(6)
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.legend()
+plt.savefig('results/Gas_Profile_CO.png')
 
 plt.show()
 
