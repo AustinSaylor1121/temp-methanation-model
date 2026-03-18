@@ -56,7 +56,7 @@ print(f'error rate of {error_number / len(mechanism_numbers)}')
 
 df = pd.read_csv('data/CO2.csv', names=['X', 'Y'])
 plt.figure(1)
-plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r.', label='Experiment')
 plt.legend()
 plt.savefig('results/Gas_Profile_CO2.png')
 
@@ -64,7 +64,7 @@ plt.savefig('results/Gas_Profile_CO2.png')
 
 df = pd.read_csv('data/H2.csv', names=['X', 'Y'])
 plt.figure(2)
-plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r.', label='Experiment')
 plt.legend()
 plt.savefig('results/Gas_Profile_H2.png')
 
@@ -72,7 +72,7 @@ plt.savefig('results/Gas_Profile_H2.png')
 
 df = pd.read_csv('data/Ar.csv', names=['X', 'Y'])
 plt.figure(3)
-plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r.', label='Experiment')
 plt.legend()
 plt.savefig('results/Gas_Profile_Ar.png')
 
@@ -80,7 +80,7 @@ plt.savefig('results/Gas_Profile_Ar.png')
 
 df = pd.read_csv('data/H20.csv', names=['X', 'Y'])
 plt.figure(4)
-plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r.', label='Experiment')
 plt.legend()
 plt.savefig('results/Gas_Profile_H2O.png')
 
@@ -88,7 +88,7 @@ plt.savefig('results/Gas_Profile_H2O.png')
 
 df = pd.read_csv('data/CH4.csv', names=['X', 'Y'])
 plt.figure(5)
-plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r.', label='Experiment')
 plt.legend()
 plt.savefig('results/Gas_Profile_CH4.png')
 
@@ -96,7 +96,7 @@ plt.savefig('results/Gas_Profile_CH4.png')
 
 df = pd.read_csv('data/CO.csv', names=['X', 'Y'])
 plt.figure(6)
-plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r', label='Experiment')
+plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r.', label='Experiment')
 plt.legend()
 plt.savefig('results/Gas_Profile_CO.png')
 
