@@ -1,4 +1,5 @@
 import random
+import time
 import Simulation_Methods
 
 import plotting_methods
@@ -6,7 +7,7 @@ import plotting_methods
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
+start = time.perf_counter()
 
 #get a random list of 100 mechanims to try, use a specific seed to make it reproducible
 random.seed(33)
@@ -99,6 +100,10 @@ plt.figure(6)
 plt.plot(df['X'], df['Y'].transform(lambda x: x / 100), 'r.', label='Experiment')
 plt.legend()
 plt.savefig('results/Gas_Profile_CO.png')
+
+end = time.perf_counter()
+
+print(f'Execution took {end - start:.2f}s')
 
 plt.show()
 
